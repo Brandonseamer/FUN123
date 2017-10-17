@@ -92,7 +92,7 @@ void rolldice(int dicenumber)
     	cout << "  -------  " << endl;
     }
 
-    if (dicenumber == 2)
+    else if (dicenumber == 2)
     {
     	cout << "  -------  " << endl;
     	cout << " |       | " << endl;
@@ -101,7 +101,7 @@ void rolldice(int dicenumber)
     	cout << "  -------  " << endl;
     }
  
-    if (dicenumber == 3)
+    else if (dicenumber == 3)
     {
     	cout << "  -------  " << endl;
     	cout << " | *     | " << endl;
@@ -110,7 +110,7 @@ void rolldice(int dicenumber)
     	cout << "  -------  " << endl;
     }
 
-    if (dicenumber == 4)
+    else if (dicenumber == 4)
     {
     	cout << "  -------  " << endl;
     	cout << " | *   * | " << endl;
@@ -119,7 +119,7 @@ void rolldice(int dicenumber)
     	cout << "  -------  " << endl;
     }
 
-    if (dicenumber == 5)
+    else if (dicenumber == 5)
     {
     	cout << "  -------  " << endl;
     	cout << " | *   * | " << endl;
@@ -128,7 +128,7 @@ void rolldice(int dicenumber)
     	cout << "  -------  " << endl;
     }
 
-    if (dicenumber == 6)
+    else if (dicenumber == 6)
     {
     	cout << "  -------  " << endl;
     	cout << " | *   * | " << endl;
@@ -136,17 +136,10 @@ void rolldice(int dicenumber)
     	cout << " | *   * | " << endl;
     	cout << "  -------  " << endl;
     }
+	else
+	{}
 }
 
-
-
-
-/************************************************************
-    Function name: power
-    Description: This function computes the of the input number to a power
-    Input: num as double, npower as double
-    Output: the given power of the input number as a double
-*************************************************************/
 void reroll(int &num1, int &num2, int &num3)
 	{
 		double reroll, diceToReroll, dieToReroll1, dieToReroll2;
@@ -212,6 +205,7 @@ void reroll(int &num1, int &num2, int &num3)
 
 			showdice(num1, num2, num3);
     	}
+	else {}
     }
 
 void showdice(double num1, double num2, double num3)
@@ -279,6 +273,7 @@ double score(double num1, double num2, double num3, double score) //HELP
 			cout << "Your score for the roll is " << rollscore << endl;
 			}
 		}
+	    	else{}
 	}
 //THIS IS FINE (BELOW)
 	else if (num1 != num2 && num1 != num3 && num2 != num3)
@@ -301,7 +296,9 @@ double score(double num1, double num2, double num3, double score) //HELP
 			score = score + rollscore;
 			cout << "Your score for the roll is " << rollscore << endl;			
 		}
+		else{}
 	}
+	else{}
 
 	cout << "Your current score is " << score << endl;
 
