@@ -1,5 +1,5 @@
 /********************************************
-    Name: Kailey Fellner
+    Name: Brandon Seamer
     Date: October 14th, 2017
     Program Name: homework4.cpp
     Program Description:
@@ -253,7 +253,7 @@ double score(double num1, double num2, double num3, double score)
 	if (num1 == num2 && num2 == num3)
 	{
 		rollscore = 20 + num1;
-        score = rollscore;
+        score = score + rollscore;
 		cout << "Your score for the roll is " << rollscore << endl;
 	}
     else if (num1 == num2 || num1 == num3 || num2 == num3)
