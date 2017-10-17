@@ -13,7 +13,8 @@ using namespace std;
 
 void rolldice(int);
 void reroll(int &num1, int &num2, int &num3);
-void showdice(double, double, double);
+void 
+(double, double, double);
 double score(double, double, double, double);
 
 int main()
@@ -78,15 +79,6 @@ int main()
 
     return 0;
 }
-
-
-
-/************************************************************
-    Function name: power
-    Description: This function computes the of the input number to a power
-    Input: num as double, npower as double
-    Output: the given power of the input number as a double
-*************************************************************/
 
 void rolldice(int dicenumber)
 {
@@ -179,14 +171,14 @@ void reroll(int &num1, int &num2, int &num3)
 
     		}
             
-    		if (diceToReroll == 3)
+    		else if (diceToReroll == 3)
     		{
     			num3 = rand() % 6+1;
    				
    				showdice(num1, num2, num3);
    			}
    		}
-    	if (reroll == 2)
+    	else if (reroll == 2)
     	{
     		cout << "Which die would you like to reroll? Enter 2 numbers that are 1, 2, or 3 separated by a space" << endl;
    			cin >> dieToReroll1 >> dieToReroll2;
@@ -204,7 +196,7 @@ void reroll(int &num1, int &num2, int &num3)
 
     			showdice(num1, num2, num3);
     		}
-    		if ((dieToReroll1 == 3 || dieToReroll2 == 3) && (dieToReroll1 == 2 || dieToReroll2 == 2))
+    		else if ((dieToReroll1 == 3 || dieToReroll2 == 3) && (dieToReroll1 == 2 || dieToReroll2 == 2))
     		{
     			num2 = rand() % 6+1;
     			num3 = rand() % 6+1;
@@ -212,7 +204,7 @@ void reroll(int &num1, int &num2, int &num3)
     			showdice(num1, num2, num3);
     		}
     	}
-    	if (reroll == 3)
+    	else if (reroll == 3)
     	{
     		num1 = rand() % 6+1;
     		num2 = rand() % 6+1;
@@ -222,15 +214,6 @@ void reroll(int &num1, int &num2, int &num3)
     	}
     }
 
-
-
-/************************************************************
-    Function name: power
-    Description: This function computes the of the input number to a power
-    Input: num as double, npower as double
-    Output: the given power of the input number as a double
-*************************************************************/
-
 void showdice(double num1, double num2, double num3)
 {
 	rolldice(num1);
@@ -238,47 +221,66 @@ void showdice(double num1, double num2, double num3)
 	rolldice(num3);
 }
 
-
-
-/************************************************************
-    Function name: power
-    Description: This function computes the of the input number to a power
-    Input: num as double, npower as double
-    Output: the given power of the input number as a double
-*************************************************************/
-
-double score(double num1, double num2, double num3, double score)
+double score(double num1, double num2, double num3, double score) //HELP
+//THIS IS FINE BELOW
 {
 	double rollscore;
 	if (num1 == num2 && num2 == num3)
 	{
 		rollscore = 20 + num1;
-        score = score + rollscore;
+        	score = score + rollscore;
 		cout << "Your score for the roll is " << rollscore << endl;
 	}
+//THIS IS FINE ( NOW )
     else if (num1 == num2 || num1 == num3 || num2 == num3)
 	{
 		if (num1 == num2)
 		{
-			
+			if(num1 > num3)
+			{
 			rollscore = 10 + num1;
 			score = score + rollscore;
-			cout << "Your score for the roll is " << rollscore << endl;			
+			cout << "Your score for the roll is " << rollscore << endl;
+			}
+			else
+			{
+			rollscore = 10 + num3;
+			score = score + rollscore;
+			cout << "Your score for the roll is " << rollscore << endl;
+			}
 		}
 		else if (num1 == num3)
 		{
+			if(num1 > num2)
+			{
 			rollscore = 10 + num1;
 			score = score + rollscore;
 			cout << "Your score for the roll is " << rollscore << endl;
-		}
-		else if (num2 == num3)
-		{
+			}
+			else
+			{
 			rollscore = 10 + num2;
 			score = score + rollscore;
 			cout << "Your score for the roll is " << rollscore << endl;
+			}
+		}
+		else if (num2 == num3)
+		{
+			if(num2 > num1)
+			{
+			rollscore = 10 + num2;
+			score = score + rollscore;
+			cout << "Your score for the roll is " << rollscore << endl;
+			}
+			else
+			{
+			rollscore = 10 + num1;
+			score = score + rollscore;
+			cout << "Your score for the roll is " << rollscore << endl;
+			}
 		}
 	}
-
+//THIS IS FINE (BELOW)
 	else if (num1 != num2 && num1 != num3 && num2 != num3)
 	{
 		if (num1 > num2 && num2 > num3)
